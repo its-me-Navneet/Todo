@@ -1,8 +1,15 @@
- function update(){ 
-
-  itemjsonarraystr = localStorage.getItem('itemsJson') ;
+ function update(){  
+ 
+    if(localStorage.getItem('itemsJson')==null){ 
+        itemjsonarray =[] ;
+        localStorage.setItem('itemsJson',JSON.stringify(itemjsonarray)) ;
+    }
+    else{
+        itemjsonarraystr = localStorage.getItem('itemsJson') ;
         itemjsonarray = JSON.parse(itemjsonarraystr) ;
-        localStorage.setItem('itemsJson' , JSON.stringify(itemjsonarray)) ;
+      
+     
+       
 
   let tablebody = document.getElementById("tablebody") ; 
 
@@ -19,6 +26,7 @@
           `
   });
   tablebody.innerHTML=str ;
+}
 
  }
  function add() { 
@@ -40,28 +48,16 @@
 
     } 
  
+     update() ;
 
-    let tablebody = document.getElementById("tablebody") ; 
-
-    let str="" ;
-
-    itemjsonarray.forEach((element,index ) => {
-        str+=`
-        <tr>
-                <td>${index+1}</td>
-                <td>${element[0]}</td>
-                <td>${element[1]}</td> 
-                 <td><button type="submit" onclick="deletee(${index})" >Remove</button></td>
-            </tr>
-            `
-    });
-    tablebody.innerHTML=str ;
+ 
   
 
- }  
+ }   
+ //localStorage.clear();
  var cli =document.getElementById("add") ;
  cli.addEventListener("click",add); 
-   update();
+   update(); 
  function deletee(index){
     itemjsonarraystr = localStorage.getItem('itemsJson') ;
     itemjsonarray = JSON.parse(itemjsonarraystr) ;  
