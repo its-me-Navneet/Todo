@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="con">
+        <h1>ToDo ✍</h1>
+
+        <div class="formm">
+
+            <label for="title" > Title</label> <br>
+            <input type="text" id="title" placeholder="Title"> <br> <br>
+            <label for="Description">Description</label> <br>
+            <textarea name="" id="Description" placeholder="Add some description" cols="84" rows="5"></textarea>
+            <br>
+            <button type="submit" id="add">Add to list</button>
+
+
+        </div> 
+
+        <table class="content"> 
+        <thead> 
+            <th>Sr.No</th> 
+            <th>Title</th> 
+             <th>Description</th> 
+             <th>Action</th>
+        </thead> 
+         
+          <tbody id="tablebody"> 
+            <tr>
+                <td>1</td>
+                <td>fhgfa</td>
+                <td></td> 
+                 <td><button type="submit" id="remove">Remove</button></td>
+            </tr>
+          </tbody>
+
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
